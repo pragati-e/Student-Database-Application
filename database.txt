@@ -1,0 +1,92 @@
+-- Create Tables, indexes, and constraints using DDL
+
+CREATE DATABASE Project;
+
+-- This creates the `Students` table, which stores information about students.
+CREATE TABLE Students (
+  -- `student_id` is the primary key of the table.
+  -- This column uniquely identifies each student.
+  student_id INT PRIMARY KEY,
+  -- `name` is the student's name.
+  -- This column cannot be null.
+  name VARCHAR(50) NOT NULL,
+  -- `date_of_birth` is the student's date of birth.
+  date_of_birth DATE,
+  -- `grade_level` is the student's grade level.
+  grade_level INT,
+  -- `phone_number` is the student's phone number.
+  phone_number VARCHAR(20),
+  -- `email` is the student's email address.
+  email VARCHAR(50),
+  -- `address` is the student's address.
+  address VARCHAR(200)
+);
+
+-- This creates the `Teachers` table, which stores information about teachers.
+CREATE TABLE Teachers (
+  -- `teacher_id` is the primary key of the table.
+  -- This column uniquely identifies each teacher.
+  teacher_id INT PRIMARY KEY,
+  -- `name` is the teacher's name.
+  -- This column cannot be null.
+  name VARCHAR(50) NOT NULL,
+  -- `phone_number` is the teacher's phone number.
+  phone_number VARCHAR(20),
+  -- `email` is the teacher's email address.
+  email VARCHAR(50),
+  -- `address` is the teacher's address.
+  address VARCHAR(200),
+  -- `classes_taught` is a list of the classes that the teacher teaches.
+  classes_taught VARCHAR(200)
+);
+
+-- This creates the `Classes` table, which stores information about classes.
+CREATE TABLE Classes (
+  -- `class_id` is the primary key of the table.
+  -- This column uniquely identifies each class.
+  class_id INT PRIMARY KEY,
+  -- `name` is the name of the class.
+  -- This column cannot be null.
+  name VARCHAR(50) NOT NULL,
+  -- `description` is a description of the class.
+  description VARCHAR(200),
+  -- `teacher_id` is the ID of the teacher who teaches the class.
+  teacher_id INT,
+  -- This foreign key constraint ensures that the `teacher_id` column references a valid row in the `Teachers` table.
+  FOREIGN KEY (teacher_id) REFERENCES Teachers(teacher_id)
+);
+
+-- This creates the `Grades` table, which stores information about grades.
+CREATE TABLE Grades (
+  -- `grade_id` is the primary key of the table.
+  -- This column uniquely identifies each grade.
+  grade_id INT PRIMARY KEY,
+  -- `student_id` is the ID of the student who received the grade.
+  student_id INT,
+  -- `class_id` is the ID of the class that the student took.
+  class_id INT,
+  -- `teacher_id` is the ID of the teacher who taught the class.
+  teacher_id INT,
+  -- `grade_score` is the student's grade in the class.
+  grade_score INT,
+  -- This foreign key constraint ensures that the `student_id` column references a valid row in the `Students` table.
+  FOREIGN KEY (student_id) REFERENCES Students(student_id),
+  -- This foreign key constraint ensures that the `class_id` column references a valid row in the `Classes` table.
+  FOREIGN KEY (class_id) REFERENCES Classes(class_id),
+  -- This foreign key constraint ensures that the `teacher_id` column references a valid row in the `Teachers` table.
+  FOREIGN KEY (teacher_id) REFERENCES Teachers(teacher_id)
+);
+
+-- This creates an index on the `grade_score` column of the `Grades` table.
+CREATE INDEX grade_score_idx ON Grades (grade_score);
+
+-- This creates a view called `high_grades` that displays the name and grade of all students who scored higher than 90 in at least one class.
+CREATE VIEW high_grades AS
+  SELECT s.name AS student_name, g.grade_score
+  FROM Students s
+  JOIN Grades g
+
+
+
+-- if code not work use this - >GRANT ALL PRIVILEGES ON Testing.* TO 'your_username'@'localhost' IDENTIFIED BY 'your_password';
+-- will need later USE Testing; ALTER TABLE Students MODIFY COLUMN student_id INT auto_increment PRIMARY KEY;

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Database</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+ <style>
+    body {
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    header {
+      height: 70px;
+      background-color: #3F51B5;
+      padding: 20px;
+    }
+
+    .header-logo {
+      float: left;
+      margin-right: 20px;
+    }
+
+    .header-title {
+      font-family: Roboto, sans-serif;
+      font-size: 2em;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    nav {
+      background-color: #ffffff;
+      padding: 20px;
+    }
+
+    .nav-link {
+      display: inline-block;
+      margin-right: 20px;
+    }
+
+    .nav-link:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    input[type="submit"] {
+      background-color: #000000;
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      background-image: linear-gradient(to right, #3F51B5 0%, #4285F4 51%, #3F51B5 100%);
+      border-radius: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .animated {
+      animation: animate 1s linear infinite;
+    }
+
+    @keyframes animate {
+      0% {
+        transform: scale(0.9);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    </style>
+<nav>
+  <a class="nav-link" href="./index.html/">Home</a>
+  <a class="nav-link" href="./add_student.php">Add Student</a>
+  <a class="nav-link" href="./teacher.html">Add Teacher</a> <!-- new link added -->
+  <a class="nav-link" href="./display-student.html">Add Student Data</a>
+  <a class="nav-link" href="./Display.html">Add Display Data table</a>
+        </nav>
+
+<body>
+  <header>
+    <h1>Student Database</h1>
+  </header>
+  <main>
+    <section>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Date of Birth</th>
+            <th>Grade Level</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Address</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Aa S</td>
+            <td>2000-12-22</td>
+            <td>6</td>
+            <td>232322342</td>
+            <td>aaaaffs@gmail.com</td>
+            <td>123 yahoo ma</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Charly</td>
+            <td>2000-01-02</td>
+            <td>5</td>
+            <td>233232323</td>
+            <td>a@gmail.com</td>
+            <td>sasas</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>w</td>
+            <td>1200-11-11</td>
+            <td>2</td>
+            <td>2</td>
+            <td>asas2@gmail.com</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>2</td>
+            <td>0001-01-01</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1@mail.com</td>
+            <td>qsq</td>
+          </tr>
+        <tr>
+          <td>John Smith</td>
+          <td>1999-01-01</td>
+          <td>12</td>
+          <td>(123) 456-7890</td>
+          <td>john.smith@email.com</td>
+          <td>123 Main Street, Anytown, CA 91234</td>
+        </tr>
+        <tr>
+          <td>Jane Doe</td>
+          <td>2000-02-02</td>
+          <td>11</td>
+          <td>(555) 678-9012</td>
+          <td>jane.doe@email.com</td>
+          <td>456 Elm Street, Anytown, CA 91234</td>
+        </tr>
+        <tr>
+          <td>Peter Jones</td>
+          <td>2001-03-03</td>
+          <td>10</td>
+          <td>(777) 890-1234</td>
+          <td>peter.jones@email.com</td>
+          <td>789 Pine Street, Anytown, CA 91234</td>
+        </tr>
+        <tr>
+          <td>Mary Green</td>
+          <td>2002-04-04</td>
+          <td>9</td>
+          <td>(999) 012-3456</td>
+          <td>mary.green@email.com</td>
+          <td>1010 Oak Street, Anytown, CA 91234</td>
+        </tr>
+        <tr>
+          <td>Betty White</td>
+          <td>1922-01-17</td>
+          <td>100</td>
+          <td>(123) 456-7890</td>
+          <td>betty.white@email.com</td>
+          <td>The Golden Girls, Miami, FL 33126</td>
+        </tr>
+        <tr>
+          <td>Tom Hanks</td>
+          <td>1956-07-09</td>
+          <td>66</td>
+          <td>(555) 678-9012</td>
+          <td>tom.hanks@email.com</td>
+          <td>1234 Hollywood Boulevard, Los Angeles, CA 90028</td>
+        </tr>
+        <tr>
+          <td>Jennifer Lawrence</td>
+          <td>1990-08-15</td>
+          <td>32</td>
+          <td>(777) 890-1234</td>
+          <td>jennifer.lawrence@email.com</td>
+          <td>3456 Beverly Hills, Los Angeles, CA 90024</td>
+        </tr>
+        <tr>
+  <td>Ryan Reynolds</td>
+  <td>1976-10-23</td>
+  <td>46</td>
+  <td>(999) 012-3456</td>
+  <td>ryan.reynolds@email.com</td>
+  <td>1010 Sunset Boulevard, Los Angeles, CA 90026</td>
+</tr>
+<tr>
+  <td>Chris Hemsworth</td>
+  <td>1983-08-11</td>
+  <td>39</td>
+  <td>(123) 456-7890</td>
+  <td>chris.hemsworth@email.com</td>
+  <td>1234 Hemsworth Way, Byron Bay, New South Wales, Australia</td>
+</tr>
+<tr>
+  <td>Scarlett Johansson</td>
+  <td>1984-01-22</td>
+  <td>38</td>
+  <td>(555) 678-9012</td>
+  <td>scarlett.johansson@email.com</td>
+  <td>4567 Manhattan Avenue, New York, NY 10027</td>
+</tr>
+<tr>
+  <td>Dwayne Johnson</td>
+  <td>1972-05-22</td>
+  <td>50</td>
+  <td>(777) 890-1234</td>
+  <td>therock@email.com</td>
+  <td>The Rock, Miami, FL 33126</td>
+</tr>
+<tr>
+  <td>Gal Gadot</td>
+  <td>1985-03-30</td>
+  <td>37</td>
+  <td>(999) 012-3456</td>
+  <td>gal.gadot@email.com</td>
+  <td>Tel Aviv, Israel</td>
+</tr>
+<tr>
+  <td>Robert Downey Jr.</td>
+  <td>1965-04-04</td>
+  <td>57</td>
+  <td>(123) 456-7890</td>
+  <td>robert.downey.jr@email.com</td>
+  <td>Malibu, CA 90265</td>
+</tr>
+<tr>
+  <td>Chris Evans</td>
+  <td>1981-06-13</td>
+  <td>41</td>
+  <td>(555) 678-9012</td>
+  <td>chris.evans@email.com</td>
+  <td>Los Angeles, CA 90024</td>
+</tr>
+<tr>
+  <td>Chris Pratt</td>
+  <td>1979-06-21</td>
+  <td>43</td>
+  <td>(777) 890-1234</td>
+  <td>chris.pratt@email.com</td>
+  <td>Anna, Hawaii 96701</td>
+</tr>
+<tr>
+  <td>Bradley Cooper</td>
+  <td>1975-01-05</td>
+  <td>47</td>
+  <td>(999) 012-3456</td>
+  <td>bradley.cooper@email.com</td>
+  <td>Greenwich Village, New York, NY 10011</td>
+</tr>
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Current Students</h2>
+      <ul>
+        <li>Aa S</li>
+        <li>Charly</li>
+        <li>w</li>
+        <li>2</li>
+      </ul>
+
+    </section>
+    <footer>
+      <p>Copyright &copy; 2023</p>
+    </footer>
+  </main>
+</body>
+</html>
