@@ -2,7 +2,11 @@
 This is a simple student database app that allows users to add, edit, and delete students. It is written in PHP and uses MySQL as the database.
 
 # Features
-Add new students Edit existing students Delete students Search for students View a list of all students
+- Add new students
+- Edit existing students
+- Delete students
+- Search for students
+- View a list of all students
 
 # Requirements
 - PHP 7.0 or higher
